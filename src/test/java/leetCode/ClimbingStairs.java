@@ -2,9 +2,12 @@ package leetCode;
 
 public class ClimbingStairs {
     //Overriding comment
+    //This is a test comment again
+    //ClimbingStairs
     //This is a test comment
     //Comment to create conflict
     public static void main(String[] args) {
+        System.out.println("Calling functions");
         System.out.println("Calling climbStairs");
         System.out.println(climbStairs(6));
     }
