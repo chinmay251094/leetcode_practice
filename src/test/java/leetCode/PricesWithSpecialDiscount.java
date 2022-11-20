@@ -38,6 +38,7 @@ public class PricesWithSpecialDiscount {
     }
 
     private static int[] finalPrices(int[] prices) {
+        //create a new array
         int[] result = new int[prices.length];
         //to store the len of the array
         int len = prices.length;

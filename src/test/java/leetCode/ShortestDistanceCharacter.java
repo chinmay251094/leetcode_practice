@@ -31,6 +31,7 @@ public class ShortestDistanceCharacter {
 
     private static int[] shortestToChar(String s, char c) {
         int[] arr = new int[s.length()];
+        //create a list
         List<Integer> list = getIndexesOf(s, c);
         for (int i = 0; i < s.length(); i++) {
             int min = 0;
