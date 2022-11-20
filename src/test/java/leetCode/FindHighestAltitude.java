@@ -26,6 +26,7 @@ public class FindHighestAltitude {
         if (max < 0) {
             max = 0;
         }
+        //returning max altitude
         return max;
     }
 }

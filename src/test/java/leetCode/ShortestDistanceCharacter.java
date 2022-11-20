@@ -47,6 +47,7 @@ public class ShortestDistanceCharacter {
         return arr;
     }
 
+    //get index of items
     static List<Integer> getIndexesOf(String s, char ch) {
         List<Integer> list = new ArrayList<>();
 
