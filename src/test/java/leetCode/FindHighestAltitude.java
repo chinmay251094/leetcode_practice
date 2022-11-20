@@ -6,6 +6,7 @@ public class FindHighestAltitude {
         System.out.println(largestAltitude(gain));
     }
 
+    //program to find the largest altitude
     private static int largestAltitude(int[] gain) {
         int[] netGain = new int[gain.length + 1];
         netGain[0] = 0;
