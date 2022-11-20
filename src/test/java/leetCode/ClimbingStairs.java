@@ -2,8 +2,10 @@ package leetCode;
 
 public class ClimbingStairs {
     //Overriding comment
-    //This is a test comment
+    //This is a test comment again
+    //ClimbingStairs
     public static void main(String[] args) {
+        System.out.println("Calling functions");
         System.out.println(climbStairs(6));
     }
 
