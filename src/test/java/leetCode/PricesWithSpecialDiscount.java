@@ -34,33 +34,14 @@ public class PricesWithSpecialDiscount {
         //int[] arr = {8, 4, 6, 2, 3};
         //int[] arr = {10, 1, 1, 6};
         int[] arr = {10, 2, 5, 2, 8};
-        //8 2 3 6 8
         System.out.println(Arrays.toString(finalPrices(arr)));
     }
 
-    //[8,4,6,2,3]
-    //[4,2,4,2,3]
-//    private static int[] finalPrices(int[] prices) {
-//        int[] ans = new int[prices.length];
-//        int len = prices.length;
-//
-//        for (int i = 0; i < len - 1; i++) {
-//            int max = 0;
-//            for (int j = 0; j < len; j++) {
-//                if (prices[j] <= prices[i]) {
-//                    max = Math.abs(prices[i] - prices[i + 1]);
-//                }
-//            }
-//            ans[i] = max;
-//        }
-//        ans[ans.length - 1] = prices[prices.length - 1];
-//        return ans;
-//    }
-
     private static int[] finalPrices(int[] prices) {
+        //create a new array
         int[] result = new int[prices.length];
+        //to store the len of the array
         int len = prices.length;
-        //10, 2, 5, 2, 8
         for (int i = 0; i < len; i++) {
             for (int j = i + 1; j < len; j++) {
                 if (prices[j] <= prices[i]) {
