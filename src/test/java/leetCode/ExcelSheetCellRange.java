@@ -8,6 +8,7 @@ public class ExcelSheetCellRange {
         System.out.println(cellsInRange("C1:K9"));
     }
 
+    //read data from excel
     public static List<String> cellsInRange(String str) {
         char[] s = str.toCharArray();
         List<String> result = new ArrayList<>();
