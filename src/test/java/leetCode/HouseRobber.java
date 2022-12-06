@@ -1,23 +1,44 @@
 package leetCode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class HouseRobber {
     public static void main(String[] args) {
         int[] arr = {2, 1, 1, 2};
         System.out.println(rob(arr));
     }
 
-    //try finding max value one after the other list[index] and list[index+1] and keep adding them to list and finally sum up the list
+//    private static int rob(int[] nums) {
+//        int start = 0, end = nums.length - 1;
+//        List<Integer> list = new ArrayList<>();
+//
+//        while (start < end) {
+//
+//            if(start == end) {
+//                break;
+//            }
+//
+//            if (nums[start] > nums[end]) {
+//                list.add(nums[start]);
+//            } else {
+//                list.add(nums[end]);
+//            }
+//            start++;
+//            end--;
+//        }
+//
+//        return list.stream().mapToInt(Integer::intValue).sum();
+//    }
+
     private static int rob(int[] nums) {
-        int sum = 0;
-        List<Integer> maxItems = new ArrayList<>();
+        int odd = 0, even = 0;
 
         for (int index = 0; index < nums.length; index += 2) {
-            maxItems.add(Math.max(nums[index], nums[index + 1]));
+            even = even + nums[index];
+            try {
+                odd = odd + nums[index + 1];
+            } catch (ArrayIndexOutOfBoundsException e) {
+                return Math.max(even, odd);
+            }
         }
-        sum = maxItems.stream().mapToInt(Integer::intValue).sum();
-        return sum;
+        return Math.max(even, odd);
     }
 }
