@@ -31,9 +31,9 @@ package leetCode;
 import java.util.Arrays;
 public class PricesWithSpecialDiscount {
     public static void main(String[] args) {
-        //int[] arr = {8, 4, 6, 2, 3};
+        int[] arr = {8, 4, 6, 2, 3};
         //int[] arr = {10, 1, 1, 6};
-        int[] arr = {10, 2, 5, 2, 8};
+        //int[] arr = {10, 2, 5, 2, 8};
         System.out.println(Arrays.toString(finalPrices(arr)));
     }
 

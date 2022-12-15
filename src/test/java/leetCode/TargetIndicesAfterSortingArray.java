@@ -4,40 +4,28 @@ import java.util.*;
 
 public class TargetIndicesAfterSortingArray {
     public static void main(String[] args) {
-        int[] arr = {100, 1, 100};
-        System.out.println(targetIndices(arr, 100));
-        //targetIndices(arr, 2);
+        int[] arr = {47, 39, 27, 16, 5, 51, 51, 40, 30, 100, 83, 7, 80, 3, 14, 52, 39, 43, 8, 39, 100, 14, 90, 7, 17, 72, 16, 9};
+        System.out.println(targetIndices(arr, 14));
     }
 
     private static List<Integer> targetIndices(int[] nums, int target) {
         Arrays.sort(nums);
         List<Integer> list = new ArrayList<>();
         int lp = 0, rp = nums.length - 1;
-        boolean flag = true;
+        //3, 5, 7, 7, 8, 9, 14, 14, 16, 16, 17, 27, 30, 39, 39, 39, 40, 43, 47, 51, 51, 52, 72, 80, 83, 90, 100, 100
 
-        while (flag) {
-            int mid = lp + (rp - lp) / 2;
-            //1 100 100
-            if (target <= nums[mid]) {
-                lp = 0;
-                rp = mid;
-            } else if (target >= nums[mid] && nums[mid - 1] != target) {
-                lp = mid;
+        for (int num : nums) {
+            if (num < target) {
+                lp++;
+            } else if (num > target) {
+                rp--;
             }
-            flag = false;
         }
 
         while (lp <= rp) {
-            if (nums[lp] == target) {
-                list.add(lp);
-            } else if (nums[rp] == target) {
-                list.add(rp);
-            }
-
-            lp++;
-            rp--;
+            list.add(lp);
         }
-        Collections.sort(list);
+
         return list;
     }
 }
